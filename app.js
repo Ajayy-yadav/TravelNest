@@ -2,6 +2,7 @@ if (process.env.NODE_ENV!="production"){
 require('dotenv').config()
 // console.log(process.env.CLOUD_NAME);
 }
+const PORT=process.env.PORT || 8080;
 
 const express=require("express")
 const path=require("path")
@@ -110,7 +111,7 @@ app.use((err,req,res,next)=>{
     res.status(status).render("./listings/err.ejs",{message})
 })
 
-app.listen("8080",()=>{
+app.listen(PORT,()=>{
     console.log("listening to the port 8080");
 })
  
