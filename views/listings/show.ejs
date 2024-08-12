@@ -83,7 +83,7 @@
     <p class="card-text"><%= rev.comment%></p>
     <!-- <p class="card-text"><%=rev.rating%>star</p> -->
 </div>
-<% if(curUser && list.owner._id.equals(curUser.id)){%>
+<% if(curUser && rev.author.username===curUser.username){%>
 <form action="/listings/<%=list._id%>/reviews/<%=rev._id%>?_method=DELETE" class="mb-3 mt-2" method="post">
     <button class="btn btn-sm btn-dark">Delete</button>
 </form>
